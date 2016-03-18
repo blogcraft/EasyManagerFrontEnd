@@ -1,0 +1,10 @@
+<form {{action 'register' on="submit"}} >
+  Name: {{input value=name type="text"}}
+  Email: {{input value=email type="text"}}
+  Password: {{input value=password type="password"}}
+  Confirm Password: {{input value=password_confirmation type="password"}}
+  <button type="submit">Submit</button>
+  {{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+  {{/if}}
+</form>
