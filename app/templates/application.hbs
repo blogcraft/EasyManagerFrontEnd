@@ -1,11 +1,80 @@
-<h2 id="title">Welcome to Ember</h2>
+<div id="wrapper">
+  <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      {{#link-to 'index' class="navbar-brand"}}Easy Manager{{/link-to}}
+    </div>
 
-{{#if session.isAuthenticated}}
-  {{#link-to 'protected'}}Protected{{/link-to}}
-  <button {{action 'invalidateSession'}}>Logout</button>
-{{else}}
-  {{#link-to 'login'}}Login{{/link-to}}
-  {{#link-to 'register'}}Register{{/link-to}}
-{{/if}}
+    <ul class="nav navbar-top-links navbar-right">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-user">
+          <li>
+            <a href="#/users/profile"><i class="fa fa-user fa-fw"></i> User Profile</a>
+          </li>
+          <li>
+            <a href="#/users/settings"><i class="fa fa-gear fa-fw"></i> Settings</a>
+          </li>
+          <li class="divider"></li>
+          {{#if session.isAuthenticated}}
+          <li>
+            <a {{action 'invalidateSession'}}><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+          </li>
+          {{else}}
+          <li>
+            {{#link-to 'login'}}<i class="fa fa-sign-in fa-fw"></i> Login{{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'register'}}<i class="fa fa-pencil-square-o fa-fw"></i> Register{{/link-to}}
+          </li>
+          {{/if}}
+        </ul>
+      </li>
+    </ul>
 
-{{outlet}}
+    <div class="navbar-default sidebar" role="navigation">
+      <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+          <li>
+            {{#link-to 'dashboard'}}<i class="fa fa-dashboard fa-fw"></i> Dashboard{{/link-to}}
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-calendar"></i> Appointments<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+              <li>
+                {{#link-to 'appointments'}}My Appointments{{/link-to}}
+              </li>
+              <li>
+                <a href="#/dates/new">Add Appointment</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#/clients"><i class="fa fa-users"></i> Clients<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+              <li>
+                {{#link-to 'clients'}}My Clients{{/link-to}}
+              </li>
+              <li>
+                <a href="#/clients/new">Add Client</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            {{#link-to 'payments'}}<i class="fa fa-credit-card"></i> Payments{{/link-to}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="page-wrapper">
+    {{outlet}}
+  </div>
+</div>

@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'client',
+    modulePrefix: 'easy-manager-front',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',

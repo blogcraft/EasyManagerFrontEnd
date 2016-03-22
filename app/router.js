@@ -11,6 +11,10 @@ Router.map(function() {
   this.route('register');
   this.route('confirm');
   this.route('confirm-success');
+  this.route('dashboard');
+  this.route('appointments');
+  this.route('clients');
+  this.route('payments');
 });
 
 export default Router;

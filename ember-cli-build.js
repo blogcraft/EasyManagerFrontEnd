@@ -7,6 +7,22 @@ module.exports = function(defaults) {
     // Add options here
   });
 
+  if (app.env === 'development'){
+    app.import('bower_components/bootstrap/dist/css/bootstrap.css')
+    app.import('bower_components/bootstrap/dist/js/bootstrap.js')
+    app.import('bower_components/metisMenu/dist/metisMenu.css')
+    app.import('bower_components/metisMenu/dist/metisMenu.js')
+  }
+  if (app.env === 'test'){
+
+  }
+  if (app.env === 'production'){
+    app.import('bower_components/bootstrap/dist/css/bootstrap.min.css')
+    app.import('bower_components/bootstrap/dist/js/bootstrap.min.js')
+    app.import('bower_components/metisMenu/dist/metisMenu.min.css')
+    app.import('bower_components/metisMenu/dist/metisMenu.min.js')
+  }
+
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
