@@ -46,7 +46,7 @@
             {{#link-to 'dashboard'}}<i class="fa fa-dashboard fa-fw"></i> Dashboard{{/link-to}}
           </li>
           <li>
-            <a href="#"><i class="fa fa-calendar"></i> Appointments<span class="fa arrow"></span></a>
+            <a><i class="fa fa-calendar"></i> Appointments<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
               <li>
                 {{#link-to 'appointments'}}My Appointments{{/link-to}}
@@ -57,13 +57,13 @@
             </ul>
           </li>
           <li>
-            <a href="#/clients"><i class="fa fa-users"></i> Clients<span class="fa arrow"></span></a>
+            <a><i class="fa fa-users"></i> Clients<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
               <li>
                 {{#link-to 'clients'}}My Clients{{/link-to}}
               </li>
               <li>
-                <a href="#/clients/new">Add Client</a>
+                {{#link-to 'clients.new'}}Add Client{{/link-to}}
               </li>
             </ul>
           </li>

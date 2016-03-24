@@ -13,7 +13,12 @@ Router.map(function() {
   this.route('confirm-success');
   this.route('dashboard');
   this.route('appointments');
-  this.route('clients');
+
+  this.route('clients', function() {
+    this.route('new');
+    this.route('show', { path: ':client_id'});
+  });
+
   this.route('payments');
 });
 
