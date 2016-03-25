@@ -1,5 +1,9 @@
 <div id="wrapper">
   <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    {{#link-to 'index' class="navbar-brand"}}<span><img height=40 src="/assets/images/isotipo.png" /> Easy Manager</span>{{/link-to}}
+
+    {{#if session.isAuthenticated}}
+
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -7,37 +11,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      {{#link-to 'index' class="navbar-brand"}}Easy Manager{{/link-to}}
+
     </div>
 
-    <ul class="nav navbar-top-links navbar-right">
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-          <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-        </a>
-        <ul class="dropdown-menu dropdown-user">
-          <li>
-            <a href="#/users/profile"><i class="fa fa-user fa-fw"></i> User Profile</a>
-          </li>
-          <li>
-            <a href="#/users/settings"><i class="fa fa-gear fa-fw"></i> Settings</a>
-          </li>
-          <li class="divider"></li>
-          {{#if session.isAuthenticated}}
-          <li>
-            <a {{action 'invalidateSession'}}><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-          </li>
-          {{else}}
-          <li>
-            {{#link-to 'login'}}<i class="fa fa-sign-in fa-fw"></i> Login{{/link-to}}
-          </li>
-          <li>
-            {{#link-to 'register'}}<i class="fa fa-pencil-square-o fa-fw"></i> Register{{/link-to}}
-          </li>
-          {{/if}}
-        </ul>
-      </li>
-    </ul>
 
     <div class="navbar-default sidebar" role="navigation">
       <div class="sidebar-nav navbar-collapse">
@@ -52,7 +28,7 @@
                 {{#link-to 'appointments'}}My Appointments{{/link-to}}
               </li>
               <li>
-                <a href="#/dates/new">Add Appointment</a>
+                {{#link-to 'appointments'}}Add Appointment{{/link-to}}
               </li>
             </ul>
           </li>
@@ -70,11 +46,40 @@
           <li>
             {{#link-to 'payments'}}<i class="fa fa-credit-card"></i> Payments{{/link-to}}
           </li>
+          <li class="nav-personal">
+            <a><i class="fa fa-user"></i> My Easy Manager<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+              <li>
+                <a href="#/users/profile"><i class="fa fa-user fa-fw"></i> User Profile</a>
+              </li>
+              <li>
+                <a href="#/users/settings"><i class="fa fa-gear fa-fw"></i> Settings</a>
+              </li>
+              <li class="divider"></li>
+              {{#if session.isAuthenticated}}
+              <li>
+                <a {{action 'invalidateSession'}}><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+              </li>
+              {{/if}}
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
+    {{else}}
+    <ul class="nav navbar-nav navbar-right">
+      <li>{{#link-to 'register'}}Register{{/link-to}}</li>
+      <li>{{#link-to 'login'}}Login{{/link-to}}</li>
+    </ul>
+    {{/if}}
   </nav>
-  <div id="page-wrapper">
-    {{outlet}}
-  </div>
+  {{#if session.isAuthenticated}}
+    <div id="page-wrapper">
+      {{outlet}}
+    </div>
+  {{else}}
+    <div>
+      {{outlet}}
+    </div>
+  {{/if}}
 </div>
