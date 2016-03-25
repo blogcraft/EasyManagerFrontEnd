@@ -21,13 +21,13 @@
 				<tbody>
 					{{#each model as |client|}}
 					<tr class="even">
-						<td>{{client.firstname}}</td>
-						<td>{{client.lastname}}</td>
+						<td>{{client.firstName}}</td>
+						<td>{{client.lastName}}</td>
 						<td>{{client.phone}}</td>
 						<td>
-							<a href="#"><span class="fa fa-trash-o"></span></a>
+							{{#link-to 'clients.delete' client}}<span class="fa fa-trash-o"></span>{{/link-to}}
 							<a href="#"><span class="fa fa-edit"></span></a>
-							{{#link-to "clients.show" client}}<span class="fa fa-eye"></span>{{/link-to}}
+							{{#link-to 'clients.show' client}}<span class="fa fa-eye"></span>{{/link-to}}
 						</td>
 					</tr>
 					{{/each}}
