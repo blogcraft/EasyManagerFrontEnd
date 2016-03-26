@@ -12,6 +12,9 @@ module.exports = function(defaults) {
     app.import('bower_components/bootstrap/dist/js/bootstrap.js')
     app.import('bower_components/metisMenu/dist/metisMenu.css')
     app.import('bower_components/metisMenu/dist/metisMenu.js')
+    app.import('bower_components/datatables/media/css/dataTables.bootstrap.css')
+    app.import('bower_components/datatables/media/js/jquery.dataTables.js')
+    app.import('bower_components/datatables/media/js/dataTables.bootstrap.js')
   }
   if (app.env === 'test'){
 
