@@ -1,0 +1,48 @@
+<div class="navbar-default sidebar" role="navigation">
+  <div class="sidebar-nav navbar-collapse">
+    <ul class="nav" id="side-menu">
+      <li>
+        {{#link-to 'dashboard' aria-expanded="false"}}<i class="fa fa-dashboard fa-fw"></i> Dashboard{{/link-to}}
+      </li>
+      <li>
+        <a href="#" aria-expanded="false"><i class="fa fa-calendar"></i> Appointments<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+          <li>
+            {{#link-to 'appointments'}}My Appointments{{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'appointments'}}Add Appointment{{/link-to}}
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" aria-expanded="false"><i class="fa fa-users"></i> Clients<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+          <li>
+            {{#link-to 'clients'}}My Clients{{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'clients.new'}}Add Client{{/link-to}}
+          </li>
+        </ul>
+      </li>
+      <li>
+        {{#link-to 'payments' aria-expanded="false"}}<i class="fa fa-credit-card"></i> Payments{{/link-to}}
+      </li>
+      <li>
+        <a href="#" aria-expanded="false"><i class="fa fa-user"></i> My Easy Manager<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+          <li>
+            <a href="#/users/profile"><i class="fa fa-user fa-fw"></i> User Profile</a>
+          </li>
+          <li>
+            <a href="#/users/settings"><i class="fa fa-gear fa-fw"></i> Settings</a>
+          </li>
+          <li>
+            <a href="#" {{action 'invalidateSession'}}><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

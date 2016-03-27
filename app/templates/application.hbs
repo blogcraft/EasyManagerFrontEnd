@@ -1,76 +1,27 @@
 <div id="wrapper">
   <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-    {{#link-to 'index' class="navbar-brand"}}<span><img height=40 src="/assets/images/isotipo.png" /> Easy Manager</span>{{/link-to}}
-
-    {{#if session.isAuthenticated}}
-
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-
+      {{#link-to 'index' class="navbar-brand" }}<span class="logo"><img src="/assets/images/isotipo.png" /> EASY MANAGER</span>{{/link-to}}
     </div>
-
-
-    <div class="navbar-default sidebar" role="navigation">
-      <div class="sidebar-nav navbar-collapse">
-        <ul class="nav" id="side-menu">
+    {{#if session.isAuthenticated}}
+      {{metis-menu invalidateSession="invalidateSession"}}
+    {{else}}
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
           <li>
-            {{#link-to 'dashboard'}}<i class="fa fa-dashboard fa-fw"></i> Dashboard{{/link-to}}
+            {{#link-to 'register'}}Register{{/link-to}}
           </li>
           <li>
-            <a><i class="fa fa-calendar"></i> Appointments<span class="fa arrow"></span></a>
-            <ul class="nav nav-second-level">
-              <li>
-                {{#link-to 'appointments'}}My Appointments{{/link-to}}
-              </li>
-              <li>
-                {{#link-to 'appointments'}}Add Appointment{{/link-to}}
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a><i class="fa fa-users"></i> Clients<span class="fa arrow"></span></a>
-            <ul class="nav nav-second-level">
-              <li>
-                {{#link-to 'clients'}}My Clients{{/link-to}}
-              </li>
-              <li>
-                {{#link-to 'clients.new'}}Add Client{{/link-to}}
-              </li>
-            </ul>
-          </li>
-          <li>
-            {{#link-to 'payments'}}<i class="fa fa-credit-card"></i> Payments{{/link-to}}
-          </li>
-          <li class="nav-personal">
-            <a><i class="fa fa-user"></i> My Easy Manager<span class="fa arrow"></span></a>
-            <ul class="nav nav-second-level">
-              <li>
-                <a href="#/users/profile"><i class="fa fa-user fa-fw"></i> User Profile</a>
-              </li>
-              <li>
-                <a href="#/users/settings"><i class="fa fa-gear fa-fw"></i> Settings</a>
-              </li>
-              <li class="divider"></li>
-              {{#if session.isAuthenticated}}
-              <li>
-                <a {{action 'invalidateSession'}}><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-              </li>
-              {{/if}}
-            </ul>
+            {{#link-to 'login'}}Login{{/link-to}}
           </li>
         </ul>
       </div>
-    </div>
-    {{else}}
-    <ul class="nav navbar-nav navbar-right">
-      <li>{{#link-to 'register'}}Register{{/link-to}}</li>
-      <li>{{#link-to 'login'}}Login{{/link-to}}</li>
-    </ul>
     {{/if}}
   </nav>
   {{#if session.isAuthenticated}}
