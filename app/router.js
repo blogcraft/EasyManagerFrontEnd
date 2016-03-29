@@ -12,7 +12,9 @@ Router.map(function() {
   this.route('confirm');
   this.route('confirm-success');
   this.route('dashboard');
-  this.route('appointments');
+  this.route('appointments', function(){
+    this.route('new');
+  });
 
   this.route('clients', function() {
     this.route('new');
@@ -23,8 +25,8 @@ Router.map(function() {
   this.route('payments');
 
   this.route('users', function(){
-    this.route('profile', {path: 'profile'});
-    this.route('settings', {path: 'settings'});
+    this.route('profile');
+    this.route('settings');
   });
 });
 
