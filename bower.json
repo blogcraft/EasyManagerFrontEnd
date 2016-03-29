@@ -7,6 +7,7 @@
     "ember-qunit-notifications": "0.1.0",
     "jquery": "^2.2.2",
     "bootstrap": "^3.3.6",
-    "metisMenu": "^2.4.3"
+    "metisMenu": "^2.4.3",
+    "datatables": "^1.10.11"
   }
 }
