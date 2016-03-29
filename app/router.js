@@ -24,6 +24,7 @@ Router.map(function() {
 
   this.route('users', function(){
     this.route('profile', {path: 'profile'});
+    this.route('settings', {path: 'settings'});
   });
 });
 
