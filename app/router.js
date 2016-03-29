@@ -21,6 +21,10 @@ Router.map(function() {
   });
 
   this.route('payments');
+
+  this.route('users', function(){
+    this.route('profile', {path: 'profile'});
+  });
 });
 
 export default Router;

@@ -30,6 +30,7 @@ body {
 .logo img {
   height: 20px;
   vertical-align: text-top;
+  margin-top: 2px;
 }
 .nav-personal {
   border-top: 1px solid #ccc;
