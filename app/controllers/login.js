@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
   actions: {
     authenticate(){
       this.get('session').authenticate('authenticator:devise', this.get('email'), this.get('password')).catch((reason) => {
-        this.set('errorMessage', reason.error || reason);
+        this.set('errorMessage', reason.errors || reason);
       });
     }
   }

@@ -4,8 +4,12 @@ import Ember from 'ember';
 const { RSVP, isEmpty, run } = Ember;
 
 export default DeviseAuthenticator.extend({
+  serverTokenEndpoint: "/auth/sign_in",
+//  identificationAttributeName: "email",
+//  tokenAttributeName: "access-token",
   restore(data){
-    return new RSVP.Promise((resolve, reject) => {
+    return new Ember.RSVP.Promise((resolve, reject) => {
+      console.log('test');
       if (!isEmpty(data.accessToken) && !isEmpty(data.expiry) &&
           !isEmpty(data.tokenType) && !isEmpty(data.uid) && !isEmpty(data.client)) {
         resolve(data);
@@ -16,11 +20,11 @@ export default DeviseAuthenticator.extend({
   },
 
   authenticate(identification, password) {
-    return new RSVP.Promise((resolve, reject) => {
+    return new Ember.RSVP.Promise((resolve, reject) => {
       const { identificationAttributeName } = this.getProperties('identificationAttributeName');
       const data         = { password };
       data[identificationAttributeName] = identification;
-
+console.log("aqui");
       this.makeRequest(data).then(function(response, status, xhr) {
         //save the five headers needed to send to devise-token-auth
         //when making an authorized API call
