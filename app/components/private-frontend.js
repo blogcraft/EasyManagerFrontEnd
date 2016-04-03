@@ -5,5 +5,5 @@ export default Ember.Component.extend({
     invalidateSession: function() {
       this.sendAction("invalidateSession"); // Exposes the action
     }
-  },
+  }
 });

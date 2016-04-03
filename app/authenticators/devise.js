@@ -8,7 +8,7 @@ export default DeviseAuthenticator.extend({
 //  identificationAttributeName: "email",
 //  tokenAttributeName: "access-token",
   restore(data){
-    return new Ember.RSVP.Promise((resolve, reject) => {
+    return new RSVP.Promise((resolve, reject) => {
       console.log('test');
       if (!isEmpty(data.accessToken) && !isEmpty(data.expiry) &&
           !isEmpty(data.tokenType) && !isEmpty(data.uid) && !isEmpty(data.client)) {
@@ -20,7 +20,7 @@ export default DeviseAuthenticator.extend({
   },
 
   authenticate(identification, password) {
-    return new Ember.RSVP.Promise((resolve, reject) => {
+    return new RSVP.Promise((resolve, reject) => {
       const { identificationAttributeName } = this.getProperties('identificationAttributeName');
       const data         = { password };
       data[identificationAttributeName] = identification;

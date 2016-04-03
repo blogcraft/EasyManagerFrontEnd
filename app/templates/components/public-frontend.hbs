@@ -3,237 +3,204 @@
 <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
-<body id="page-top" class="index">
-
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
-
-    </ul>
-  </div>
-
+<div id="page-top" class="index">
   <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header page-scroll">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-              <a href="#page-top"><img style="height:60px;" src="assets/images/logo.png" alt="Easy Manager" /></a>
-          </div>
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-right">
-                  <li class="hidden">
-                      <a href="#page-top"></a>
-                  </li>
-                  <!--li class="page-scroll">
-                      <a href="#portfolio">Portfolio</a>
-                  </li>
-                  <li class="page-scroll">
-                      <a href="#about">About</a>
-                  </li-->
-                  <li class="page-scroll">
-                      <a id="header-subscribe" href="#contact">Inscríbete</a>
-                  </li>
-                  <li>
-                    {{#link-to 'register'}}Register{{/link-to}}
-                  </li>
-                  <li>
-                    {{#link-to 'login'}}Login{{/link-to}}
-                  </li>
-              </ul>
-          </div>
-          <!-- /.navbar-collapse -->
+    <div class="container-">
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#page-top"><img style="height: 50px;padding-left: 15px;" src="assets/images/logo.png" alt="Easy Manager" /></a>
       </div>
-      <!-- /.container-fluid -->
-      {{outlet}}
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="hidden">
+            <a href="#page-top"></a>
+          </li>
+          <li class="page-scroll">
+            <a id="header-subscribe" href="#portfolio">Nosotros</a>
+          </li>
+          <li class="page-scroll">
+            <a id="header-subscribe" href="#contact">Inscríbete</a>
+          </li>
+          <li>
+            {{#link-to 'register'}}Register{{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'login'}}Login{{/link-to}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    {{outlet}}
   </nav>
-
-  <!-- Header -->
   <header>
-      <div class="container">
-          <div class="row">
-      <div class="col-md-4">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4 text-center">
+            <img class="img-responsive hidden-sm hidden-xs" src="assets/images/profile.png" alt="">
+            <div class="intro-text">
+              <p class="skills">Atiende a tus clientes, nosotros organizamos el resto</p>
+            </div>
+        </div>
+        <div class="col-md-8">
+          <style>
+            .embed-container {
+              position: relative;
+              padding-bottom: 56.25%;
+              height: 0;
+              overflow: hidden;
+              max-width: 100%;
+            }
 
-         <img class="img-responsive" src="assets/images/profile.png" alt="">
-         <div class="intro-text">
-                      <span class="skills">Atiende a tus clientes y nosotros organizamos el resto</span>
-                      <hr class="star-light">
-                  </div>
-         <div class="col-lg-8 col-lg-offset-2 text-center">
-          <a href="#contact" class="btn btn-lg btn-outline">
-            <i class="fa fa-download page-scroll"></i> Inscríbete
-          </a>
+            .embed-container iframe,
+            .embed-container object,
+            .embed-container embed {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+          </style>
+          <div class='embed-container'>
+            <iframe src="https://www.youtube.com/embed/q5yec0p4baM?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
-      <div class="col-md-8">
-        <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed//q5yec0p4baM' frameborder='0' allowfullscreen></iframe></div>
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+        <hr class="star-light">
+        <a href="#contact" class="btn btn-lg btn-outline">
+          <i class="fa fa-download page-scroll"></i> Inscríbete
+        </a>
       </div>
-          </div>
       </div>
+    </div>
   </header>
-  <!-- Portfolio Grid Section -->
   <section id="portfolio">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-12 text-center">
-                  <h2>Sobre Nosotros</h2>
-                  <hr class="star-primary">
-              </div>
-          </div>
-          <div class="row">
-              <div align="center" class="col-sm-4 portfolio-item">
-                  <img width=256 height=256 src="assets/images/app2.png" class="img-responsive" alt="">
-        <h3 align="center" >Multiplataforma</h3>
-                  <p align="justify" ><strong>Easy Manager</strong> es una herramienta <strong class="highlighted">multiplataforma</strong> diseñada especialmente para ayudarte diariamente en la  <strong class="highlighted">administración</strong> de tu negocio personal.</p>
-        <p align="justify" >Con <strong>Easy Manager</strong> podrás llevar fácilmente tus cuentas por cobrar, agenda, entre otros.</p>
-              </div>
-              <div align="center" class="col-sm-4 portfolio-item">
-                  <img width=256 height=256 src="assets/images/people2.png" class="img-responsive" alt="">
-        <h3 align="center" >Gestión Diaria</h3>
-                  <p align="justify" ><strong>Easy Manager</strong> está orientado a trabajadores <strong class="highlighted">independientes</strong> que no tienen conocimientos de administración, contabilidad y finanzas, para apoyarlos a realizar su  <strong class="highlighted">gestión</strong> diaria minimizando el tiempo invertido en ello. Así puede dedicarle más tiempo a lo que le genera más <strong class="highlighted">valor.</strong></p>
-              </div>
-              <div align="center" class="col-sm-4 portfolio-item">
-                  <img width=256 height=256 src="assets/images/savings2.png" class="img-responsive" alt="">
-        <h3 align="center" >Ahorro</h3>
-                  <p align="justify" >Con <strong>Easy Manager</strong>, podrás <strong class="highlighted">ahorrar</strong> tiempo que habitualmente dedicas a tareas que no son propias de tu negocio, pero que te requieren mucho tiempo. Así podrás dedicarte más a tus <strong class="highlighted">clientes</strong> y <strong class="highlighted">rentabilizar</strong> tu tiempo de mejor manera, mientras nosotros nos hacemos cargo del resto.</p>
-              </div>
-          </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2>Sobre Nosotros</h2>
+          <hr class="star-primary">
+        </div>
       </div>
+      <div class="row">
+        <div align="center" class="col-sm-4 portfolio-item">
+          <img src="assets/images/app2.png" class="img-responsive" alt="">
+          <h3 align="center">Donde estés</h3>
+          <p class="explica"><strong>Easy Manager</strong> es una herramienta <strong class="highlighted">multiplataforma</strong> diseñada especialmente para ayudarte diariamente en la <strong class="highlighted">administración</strong> de tu negocio personal.</p>
+          <p class="explica">Con <strong>Easy Manager</strong> podrás llevar fácilmente tus cuentas por cobrar, agenda, entre otros.</p>
+        </div>
+        <div align="center" class="col-sm-4 portfolio-item">
+          <img src="assets/images/people2.png" class="img-responsive" alt="">
+          <h3 align="center">Gestión Diaria</h3>
+          <p class="explica"><strong>Easy Manager</strong> está orientado a trabajadores <strong class="highlighted">independientes</strong> que no tienen conocimientos de administración, contabilidad y finanzas, para apoyarlos a realizar su <strong class="highlighted">gestión</strong>            diaria minimizando el tiempo invertido en ello. Así puede dedicarle más tiempo a lo que le genera más <strong class="highlighted">valor.</strong></p>
+        </div>
+        <div align="center" class="col-sm-4 portfolio-item">
+          <img src="assets/images/savings2.png" class="img-responsive" alt="">
+          <h3 align="center">Ahorro</h3>
+          <p class="explica">Con <strong>Easy Manager</strong>, podrás <strong class="highlighted">ahorrar</strong> tiempo que habitualmente dedicas a tareas que no son propias de tu negocio, pero que te requieren mucho tiempo. Así podrás dedicarte más a tus <strong class="highlighted">clientes</strong>            y <strong class="highlighted">rentabilizar</strong> tu tiempo de mejor manera, mientras nosotros nos hacemos cargo del resto.</p>
+        </div>
+      </div>
+    </div>
   </section>
-
-  <!-- About Section -->
-  <!--section class="success" id="about">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-12 text-center">
-                  <h2>About</h2>
-                  <hr class="star-light">
-              </div>
-          </div>
-          <div class="row">
-              <div class="col-lg-4 col-lg-offset-2">
-                  <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
-              </div>
-              <div class="col-lg-4">
-                  <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
-              </div>
-              <div class="col-lg-8 col-lg-offset-2 text-center">
-                  <a href="#" class="btn btn-lg btn-outline">
-                      <i class="fa fa-download"></i> Download Theme
-                  </a>
-              </div>
-          </div>
-      </div>
-  </section-->
-
-  <!-- Contact Section -->
   <section id="contact" class="success">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-12 text-center">
-                  <h2>Inscríbete</h2>
-                  <hr class="star-light">
-        <p>Si te interesa participar y aportar a este proyecto dándonos tu opinión, inscríbete y te avisaremos cuando tengamos una primera versión.</p>
-              </div>
-          </div>
-          <div class="row">
-              <div class="col-lg-8 col-lg-offset-2">
-                  <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                  <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                  <form name="sentMessage" id="contactForm" novalidate>
-                      <div class="row control-group">
-                          <div class="form-group col-xs-12 floating-label-form-group controls">
-                              <label>Nombre</label>
-                              <input type="text" class="form-control" placeholder="Nombre" id="name" required data-validation-required-message="Ingresa tu nombre">
-                              <p class="help-block text-danger"></p>
-                          </div>
-                      </div>
-                      <div class="row control-group">
-                          <div class="form-group col-xs-12 floating-label-form-group controls">
-                              <label>Email</label>
-                              <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Ingresa tu email">
-                              <p class="help-block text-danger"></p>
-                          </div>
-                      </div>
-                      <br>
-                      <div id="success"></div>
-                      <div class="row">
-                          <div class="form-group col-xs-12">
-                              <button type="submit" class="btn btn-outline"><i class="fa fa-download page-scroll"></i> Enviar</button>
-                          </div>
-                      </div>
-                  </form>
-              </div>
-          </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 text-center">
+          <h2>Inscríbete</h2>
+          <hr class="star-light">
+          <p>Si te interesa participar y aportar a este proyecto dándonos tu opinión, inscríbete y te avisaremos cuando tengamos una primera versión.</p>
+        </div>
       </div>
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+          <form name="sentMessage" id="contactForm" novalidate>
+            <div class="row control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Nombre</label>
+                <input type="text" class="form-control" placeholder="Nombre" id="name" required data-validation-required-message="Ingresa tu nombre">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="row control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Ingresa tu email">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <br>
+            <div id="success"></div>
+            <div class="row">
+              <div class="form-group col-xs-12">
+                <button type="submit" class="btn btn-outline"><i class="fa fa-download page-scroll"></i> Enviar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </section>
-
-  <!-- Footer -->
   <footer class="text-center">
-      <div class="footer-above">
-          <div class="container">
-              <div class="row">
-                  <div class="footer-col col-md-4">
-                      <h3>Escríbenos</h3>
-                      <p>contacto@easymngr.com</p>
-                  </div>
-                  <div class="footer-col col-md-4">
-                      <h3>Búscanos en Redes Sociales</h3>
-                      <ul class="list-inline">
-                          <li>
-                              <a href="https://www.facebook.com/easymngr" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-                          </li>
-                          <li>
-                              <a href="https://www.twitter.com/easymngr" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                          </li>
-                          <li>
-                              <a href="https://www.linkedin.com/company/easy-manager" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
-                          </li>
-                      </ul>
-                  </div>
-                  <div class="footer-col col-md-4">
-                      <h3>Sobre Easy Manager</h3>
-                      <p>Easy Manager es una plataforma pensada en trabajadores independientes para facilitarles el trabajo administrativo</p>
-                  </div>
-              </div>
+    <div class="footer-above">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="footer-col col-sm-4">
+            <h3>Escríbenos</h3>
+            <p>contacto@easymngr.com</p>
           </div>
-      </div>
-      <div class="footer-below">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-12">
-                      Copyright &copy; Easy Manager 2016
-                  </div>
-              </div>
+          <div class="footer-col col-sm-4">
+            <h3>Búscanos en Redes Sociales</h3>
+            <ul class="list-inline">
+              <li>
+                <a href="https://www.facebook.com/easymngr" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+              </li>
+              <li>
+                <a href="https://www.twitter.com/easymngr" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/easy-manager" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+              </li>
+            </ul>
           </div>
+          <div class="footer-col col-sm-4">
+            <h3>Sobre Easy Manager</h3>
+            <p>Easy Manager es una plataforma pensada en trabajadores independientes para facilitarles el trabajo administrativo</p>
+          </div>
+        </div>
       </div>
+    </div>
+    <div class="footer-below">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12" style="color: #FFFFFF;">
+            Copyright &copy; Easy Manager 2016
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
-
-  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
   <div class="scroll-top page-scroll visible-xs visible-sm">
-      <a class="btn btn-primary" href="#page-top">
-          <i class="fa fa-chevron-up"></i>
-      </a>
+    <a class="btn btn-primary" href="#page-top">
+      <i class="fa fa-chevron-up"></i>
+    </a>
   </div>
-
-<div class="modal fade" id="pleaseWaitDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h1>Inscribiendo...</h1>
+  <div class="modal fade" id="pleaseWaitDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1>Inscribiendo...</h1>
+        </div>
+        <div class="modal-body">
+          <h4><span class="glyphicon glyphicon-time"></span> Un momento por favor </h4>
+        </div>
+      </div>
     </div>
-    <div class="modal-body">
-    <h4>
-      <span class="glyphicon glyphicon-time"></span> Un momento por favor
-    </h4>
-    </div>
-  </div>
   </div>
 </div>
-
-</body>

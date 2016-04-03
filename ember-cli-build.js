@@ -15,6 +15,7 @@ module.exports = function(defaults) {
     app.import('bower_components/datatables/media/css/dataTables.bootstrap.css')
     app.import('bower_components/datatables/media/js/jquery.dataTables.js')
     app.import('bower_components/datatables/media/js/dataTables.bootstrap.js')
+    app.import('bower_components/jquery.easing/js/jquery.easing.js')
   }
   if (app.env === 'test'){
 
@@ -24,6 +25,10 @@ module.exports = function(defaults) {
     app.import('bower_components/bootstrap/dist/js/bootstrap.min.js')
     app.import('bower_components/metisMenu/dist/metisMenu.min.css')
     app.import('bower_components/metisMenu/dist/metisMenu.min.js')
+    app.import('bower_components/datatables/media/css/dataTables.bootstrap.min.css')
+    app.import('bower_components/datatables/media/js/jquery.dataTables.min.js')
+    app.import('bower_components/datatables/media/js/dataTables.bootstrap.min.js')
+    app.import('bower_components/jquery.easing/js/jquery.easing.js')
   }
 
   // Use `app.import` to add additional libraries to the generated
