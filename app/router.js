@@ -14,6 +14,8 @@ Router.map(function() {
   this.route('dashboard');
   this.route('appointments', function(){
     this.route('new');
+    this.route('show', { path: 'show/:appointment_id'});
+    this.route('delete', { path: 'delete/:appointment_id'});
   });
 
   this.route('clients', function() {
