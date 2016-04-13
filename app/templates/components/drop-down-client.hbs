@@ -1,0 +1,5 @@
+<select class="form-control" onchange={{action "selectClient" value="target.value"}}>
+  {{#each clients as |clientChoice|}}
+    <option value={{clientChoice.id}} selected={{if client clientChoice}}>{{clientChoice.firstName}} {{clientChoice.lastName}}</option>
+  {{/each}}
+</select>
