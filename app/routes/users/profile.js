@@ -7,7 +7,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   },
   actions:{
     save(model) {
-    //  model.set('name', model.get('firstName'));
       model.save().then(function(){
           display('ok');
       });

@@ -9,18 +9,18 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     save() {
       var post_data = [];
 
-      $('input').each(function(){
-        post_data.push({"id": $(this).attr('name'), "value": $(this).val()});
+      Ember.$('input').each(function(){
+        post_data.push({"id": Ember.$(this).attr('name'), "value": Ember.$(this).val()});
       });
 
-      $.ajax({
-        url: 'http://localhost:3000/settings/other',
+      Ember.$.ajax({
+        url: 'http://localhost:3000/settings/bulk_update',
         type: 'POST',
         data: {data: post_data},
-        success: function(data){
+        success: function(){
           display('ok');
         },
-        error: function(e) {
+        error: function() {
           display('error');
         }
       });
@@ -30,11 +30,11 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
 function display(result) {
   var div;
-  if(result == 'error') {
-    div = $("#response .alert-danger");
+  if(result === 'error') {
+    div = Ember.$("#response .alert-danger");
   }
-  if(result == 'ok') {
-    div = $("#response .alert-success");
+  if(result === 'ok') {
+    div = Ember.$("#response .alert-success");
   }
 
   div.show().delay(1500).hide(1000);
