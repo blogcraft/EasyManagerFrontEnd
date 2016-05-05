@@ -11,10 +11,29 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
   actions:{
     save(model) {
       const newAppointment = this.store.createRecord('appointment', model.appointment);
-      newAppointment.save().then((appointment)=>{this.transitionTo('appointments');});
+      newAppointment.save().then(function(){
+        display('ok');
+      });
+      model = {};
     },
     cancel(){
       this.transitionTo('appointments');
     }
   }
 });
+
+Ember.onerror = function (error) {
+  display('error');
+};
+
+function display(result) {
+  var div;
+  if(result == 'error') {
+    div = $("#response .alert-danger");
+  }
+  if(result == 'ok') {
+    div = $("#response .alert-success");
+  }
+
+  div.show().delay(1500).hide(1000);
+}
