@@ -15,6 +15,7 @@
 			</thead>
 			<thead>
 				<tr>
+					<th>Date</th>
 					<th>Time</th>
 					<th>Name</th>
 					<th>Confirm</th>
@@ -26,6 +27,7 @@
 				{{#each model as |appointment|}}
 				<tr class="even">
 					<td>{{appointment.date}}</td>
+					<td>{{appointment.time}}</td>
 					<td>{{appointment.client.first_name}} {{appointment.client.last_name}}</td>
 					<td>{{input type="checkbox" name="confirmation-1" checked=appointment.confirm}}</td>
 					<td>{{input type="checkbox" name="assist-1" checked=appointment.assist}}</td>

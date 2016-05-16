@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
 
       var data, _this;
       _this = this;
-      data = this.getProperties("name", "email", "password", "password_confirmation");
+      data = this.getProperties("first_name", "email", "password", "password_confirmation");
 
       return Ember.$.ajax({
         method: "POST",
