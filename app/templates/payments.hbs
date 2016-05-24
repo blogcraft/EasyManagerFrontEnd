@@ -5,6 +5,7 @@
 	<!-- /.col-lg-12 -->
 </div>
 
+
 <div class="row">
 	<div class="col-lg-12">
 		<div class="dataTable_wrapper">
@@ -18,24 +19,16 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr class="even">
-						<td>Ignacio</td>
-						<td>Ortuzar</td>
-						<td>03-14-16 09:00</td>
-						<td><input type="checkbox"/></td>
-					</tr>
-					<tr class="odd">
-						<td>Rafael</td>
-						<td>Cereceda</td>
-						<td>03-14-16 09:00</td>
-						<td><input type="checkbox"/></td>
-					</tr>
-					<tr class="even">
-						<td>Ignacio</td>
-						<td>Ortuzar</td>
-						<td>03-14-16 09:00</td>
-						<td><input type="checkbox"/></td>
-					</tr>
+					{{#each model as |invoice|}}
+						<tr class="even">
+							<td>{{invoice.clientName}}</td>
+							<td>{{invoice.clientLastName}}</td>
+							<td>{{formatDate invoice.date}}</td>
+							<td>
+								<input type="checkbox" checked={{invoice.paid}} onclick={{action "pay" invoice.id}}/>
+							</td>
+						</tr>
+					{{/each}}
 				</tbody>
 			</table>
 		</div>
