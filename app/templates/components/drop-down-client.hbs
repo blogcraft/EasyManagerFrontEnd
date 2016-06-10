@@ -1,6 +1,6 @@
-<select class="form-control" onchange={{action "selectClient" value="target.value"}}>
-  <option value="" disabled selected>Clients</option>
+<select class="form-control" onchange={{action "selectClient" value="target.value"}} id="selcl">
+  <option value="" disabled selected>{{title}}</option>
   {{#each clients as |clientChoice|}}
-    <option value={{clientChoice.id}} selected={{if client clientChoice}}>{{clientChoice.firstName}} {{clientChoice.lastName}}</option>
+    <option value={{clientChoice.id}} selected={{eq clientId clientChoice.id}}>{{clientChoice.firstName}} {{clientChoice.lastName}}</option>
   {{/each}}
 </select>

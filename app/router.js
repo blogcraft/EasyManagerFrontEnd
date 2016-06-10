@@ -15,12 +15,14 @@ Router.map(function() {
   this.route('appointments', function(){
     this.route('new');
     this.route('show', { path: 'show/:appointment_id'});
+    this.route('edit', { path: 'edit/:appointment_id'});
     this.route('delete', { path: 'delete/:appointment_id'});
   });
 
   this.route('clients', function() {
     this.route('new');
     this.route('show', { path: 'show/:client_id'});
+    this.route('edit', { path: 'edit/:client_id'});
     this.route('delete', { path: 'delete/:client_id'});
   });
 

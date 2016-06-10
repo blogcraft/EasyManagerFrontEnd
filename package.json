@@ -22,6 +22,8 @@
     "broccoli-asset-rev": "^2.2.0",
     "broccoli-babel-transpiler": "^5.5.0",
     "ember-ajax": "0.7.1",
+    "ember-bootstrap": "0.7.2",
+    "ember-bootstrap-datetimepicker": "1.0.4",
     "ember-cli": "2.4.2",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-babel": "^5.1.5",
@@ -29,6 +31,7 @@
     "ember-cli-htmlbars": "^1.0.1",
     "ember-cli-htmlbars-inline-precompile": "^0.3.1",
     "ember-cli-inject-live-reload": "^1.3.1",
+    "ember-cli-moment-shim": "1.3.0",
     "ember-cli-qunit": "^1.2.1",
     "ember-cli-release": "0.2.8",
     "ember-cli-sass": "5.3.1",
@@ -38,8 +41,14 @@
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
     "ember-load-initializers": "^0.5.0",
+    "ember-moment": "6.1.0",
     "ember-resolver": "^2.0.3",
     "ember-simple-auth": "1.1.0-beta.3",
-    "loader.js": "^4.0.0"
+    "ember-truth-helpers": "1.2.0",
+    "eonasdan-bootstrap-datetimepicker": "4.15.35",
+    "eonasdan-bootstrap-datetimepicker-npm": "4.17.37",
+    "loader.js": "^4.0.0",
+    "moment": "2.13.0",
+    "moment-timezone": "0.5.4"
   }
 }

@@ -5,12 +5,15 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
   model(){
     return Ember.RSVP.hash({
       clients: this.store.findAll('client'),
-      appointment: {}
+      datetime: moment()
     });
   },
   actions:{
     save(model) {
-      const newAppointment = this.store.createRecord('appointment', model.appointment);
+      if (!model.clientId) {
+        return;
+      }
+      const newAppointment = this.store.createRecord('appointment', model);
       newAppointment.save().then(function(){
         display('ok');
       });
@@ -34,6 +37,7 @@ function display(result) {
   if(result === 'ok') {
     div = Ember.$("#response .alert-success");
   }
-
-  div.show().delay(1500).hide(1000);
+  if (div) {
+    div.show().delay(1500).hide(1000);
+  }
 }

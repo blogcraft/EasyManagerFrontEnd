@@ -19,6 +19,9 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'connect-src': "*"
+    },
+    moment: {
+      includeTimezone: 'all'
     }
   };
 

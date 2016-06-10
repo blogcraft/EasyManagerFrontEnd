@@ -26,14 +26,14 @@
 			<tbody>
 				{{#each model as |appointment|}}
 				<tr class="even">
-					<td>{{appointment.date}}</td>
-					<td>{{appointment.time}}</td>
-					<td>{{appointment.client.first_name}} {{appointment.client.last_name}}</td>
+					<td>{{moment-format appointment.datetime "LL"}}</td>
+					<td>{{moment-format appointment.datetime "LT"}}</td>
+					<td>{{appointment.client.firstName}} {{appointment.client.lastName}}</td>
 					<td>{{input type="checkbox" name="confirmation-1" checked=appointment.confirm}}</td>
 					<td>{{input type="checkbox" name="assist-1" checked=appointment.assist}}</td>
 					<td>
 						{{#link-to 'appointments.delete' appointment}}<span class="fa fa-trash-o"></span>{{/link-to}}
-						<a href="#"><span class="fa fa-edit"></span></a>
+						{{#link-to 'appointments.edit' appointment}}<span class="fa fa-edit"></span>{{/link-to}}
 						{{#link-to 'appointments.show' appointment}}<span class="fa fa-eye"></span>{{/link-to}}
 					</td>
 				</tr>

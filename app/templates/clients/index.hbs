@@ -27,7 +27,7 @@
 						<td>{{client.phone}}</td>
 						<td>
 							{{#link-to 'clients.delete' client}}<span class="fa fa-trash-o"></span>{{/link-to}}
-							<a href="#"><span class="fa fa-edit"></span></a>
+							{{#link-to 'clients.edit' client}}<span class="fa fa-edit"></span>{{/link-to}}
 							{{#link-to 'clients.show' client}}<span class="fa fa-eye"></span>{{/link-to}}
 						</td>
 					</tr>

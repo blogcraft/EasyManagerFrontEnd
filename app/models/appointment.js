@@ -1,12 +1,11 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  clientId: DS.attr('number'),
-  client: DS.attr(),
+  clientId: DS.attr('string'),
+  client: DS.belongsTo('client'),
   confirm: DS.attr('boolean'),
   assist: DS.attr('boolean'),
-  date: DS.attr('string'),
-  time: DS.attr('string'),
+  datetime: DS.attr('utc'),
   note: DS.attr('string'),
   address: DS.attr('string')
 });
