@@ -10,7 +10,12 @@ export default DeviseAuthenticator.extend({
   restore(data){
     return new RSVP.Promise((resolve, reject) => {
       if (!isEmpty(data.accessToken) && !isEmpty(data.expiry) &&
-          !isEmpty(data.tokenType) && !isEmpty(data.uid) && !isEmpty(data.client)) {
+      !isEmpty(data.tokenType) && !isEmpty(data.uid) && !isEmpty(data.client)) {
+        var now = new Date();
+        var exp = new Date(data.expiry*1000);
+        if (exp < now){
+          reject();
+        }
         resolve(data);
       } else {
         reject();

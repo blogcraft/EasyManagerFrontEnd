@@ -14,6 +14,7 @@ module.exports = function(defaults) {
     app.import('bower_components/datatables/media/js/jquery.dataTables.js')
     app.import('bower_components/datatables/media/js/dataTables.bootstrap.js')
     app.import('bower_components/jquery.easing/js/jquery.easing.js')
+    app.import('bower_components/bootstrap/js/scrollspy.js')
   }
   if (app.env === 'test'){
 
@@ -25,6 +26,7 @@ module.exports = function(defaults) {
     app.import('bower_components/datatables/media/js/jquery.dataTables.min.js')
     app.import('bower_components/datatables/media/js/dataTables.bootstrap.min.js')
     app.import('bower_components/jquery.easing/js/jquery.easing.js')
+    app.import('bower_components/bootstrap/js/scrollspy.js')
   }
 
   // Use `app.import` to add additional libraries to the generated
